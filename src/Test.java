@@ -49,15 +49,15 @@ public class Test {
 		
 		while(a==0){	
 			System.out.println("Bienvenido al mapa de Guatemala");
-	        System.out.println("Seleccione lo que desea hacer \n1. Nombre de Ciudad\n2. Ruta mÃ¡s corta\n3. Modificar grafo\n4. Finalizar programa");
-	        System.out.println("Ingrese la opciÃ³n numÃ©rica deseada:");
+	        System.out.println("Seleccione lo que desea hacer \n1. Nombre de Ciudad\n2. Ruta más corta\n3. Modificar grafo\n4. Finalizar programa");
+	        System.out.println("Ingrese la opción numérica deseada:");
 	        
-	        Scanner entradaEscaner = new Scanner (System.in); //CreaciÃ³n de un objeto Scanner
+	        Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
 	        try {
 				opcion = entradaEscaner.nextInt();
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
-				System.out.println("POR FAVOR! Ingrese un nÃºmero");
+				System.out.println("POR FAVOR! Ingrese un número");
 				a = 0;
 			}
 	       try {
@@ -108,7 +108,7 @@ public class Test {
 					
 				}
 				if (opcion == 4){
-					System.out.println("Gracias por haber utilizado el programa!!! Esperamos que su ruta haya sido la mÃ¡s corta");
+					System.out.println("Gracias por haber utilizado el programa!!! Esperamos que su ruta haya sido la más corta");
 				}
 			} catch (Exception e) {
 				System.out.println("Error de escritura en la ciudad");
@@ -119,7 +119,7 @@ public class Test {
 					
 		 catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("POR FAVOR! Ingrese un nÃºmero");
+			System.out.println("POR FAVOR! Ingrese un número");
 			a = 0;
 		 	}
 		}

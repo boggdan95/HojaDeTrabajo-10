@@ -76,6 +76,11 @@ public class FloydWarshall {
 		}
 	}
 	
+	/**
+	 * Adds the edge.
+	 *
+	 * @param newEdge the new edge
+	 */
 	public void addEdge(Edge newEdge){
 		edges.addElement(newEdge);
 		
