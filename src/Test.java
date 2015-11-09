@@ -14,38 +14,36 @@ public class Test {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 	
-	int a = 1;
-	
-	while(a!=0){	
-		System.out.println("Bienvenido al mapa de Guatemala");
-        System.out.println("Seleccione lo que desea hacer \n1. Nombre de Ciudad\n2. ArrayList\n3. Lista Simplemente Enlazada\n4. Lista Doblemente Enlazada\n5. Lista Circular");
-        System.out.println("Ingrese la opción numérica deseada:");
-        
-        Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
-        try {
-			opcion = entradaEscaner.nextInt();
-		} catch (Exception e1) {
+int a = 0;
+		
+		while(a==0){	
+			System.out.println("Bienvenido al mapa de Guatemala");
+	        System.out.println("Seleccione lo que desea hacer \n1. Nombre de Ciudad\n2. Ruta más corta\n3. Modificar grafo\n4. Finalizar programa");
+	        System.out.println("Ingrese la opción numérica deseada:");
+	        
+	        Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
+	        try {
+				opcion = entradaEscaner.nextInt();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				System.out.println("POR FAVOR! Ingrese un número");
+				a = 0;
+			}
+	       try {
+			if (opcion > 0 && opcion <=4){
+			    	a = 1;
+			   }
+			   else{
+				   a =0;
+			   }
+			   
+				
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("POR FAVOR! Ingrese un número");
 			a = 0;
 		}
-       try {
-		if (opcion > 0 && opcion <=5){
-		    	a = 1;
 		   }
-		   else{
-			   a =0;
-		   }
-		   
-			calculadoraPostfix.crearObjeto((int)entradaTeclado);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("POR FAVOR! Ingrese un número");
-		a = 0;
-	}
-	   }
-	}
-		
 		
 		
 		BufferedReader in = new BufferedReader(new FileReader("grafo.txt"));
@@ -69,7 +67,7 @@ public class Test {
 		    edges.addElement(new Edge(vertexObjects.get(edgeString[0]), vertexObjects.get(edgeString[1]), Double.parseDouble(edgeString[2])));
 		}
 		in.close();
-		
+	
 		Iterator<Entry<String, Vertex>> iterator = vertexObjects.entrySet().iterator();
 		while(iterator.hasNext()){
 			Map.Entry<String, Vertex> pair = (Entry<String, Vertex>)iterator.next();
@@ -96,6 +94,4 @@ public class Test {
 		
 	}
 }
-
-	}
 }
