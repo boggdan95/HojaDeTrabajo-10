@@ -67,51 +67,66 @@ public class Test {
 			   else{
 				   a =0;
 			   }
-			   
-				
-		} catch (Exception e) {
+		
+			try {
+				if (opcion==1){
+					System.out.println("Ingrese el nombre de la Ciudad1:");
+						ciudad1 = entradaEscaner.next();
+					System.out.println("Ingrese el nombre de la Ciudad2:");
+						ciudad2 = entradaEscaner.next();
+						
+						
+						FloydWarshall floyd = new FloydWarshall(vertices, edges);
+						
+						floyd.execute();
+						
+						
+						Vertex source = vertexObjects.get(ciudad1);
+						Vertex destination = vertexObjects.get(ciudad2);
+						
+						Vector<Vertex> path = floyd.path(source, destination);
+						try {
+							System.out.println("Source: "+source.getNombre()+"; Destination: "+destination.getNombre());
+							System.out.println("Path lenght: "+floyd.pathLenght(source, destination)+"km");
+							System.out.println("Path to follow:");
+							for(Vertex vertex : path){
+								System.out.print(vertex.getNombre()+"-->");
+							}
+							System.out.println("*\n");
+							a = 0;
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							System.out.println("Ciudades no encontradas, verifique ingresos");
+							a = 0;
+						}
+											
+				}
+				if (opcion == 2){
+					
+				}
+				if (opcion == 3){
+					
+				}
+				if (opcion == 4){
+					System.out.println("Gracias por haber utilizado el programa!!! Esperamos que su ruta haya sido la más corta");
+				}
+			} catch (Exception e) {
+				System.out.println("Error de escritura en la ciudad");
+				a = 0;
+			} 
+			
+		}	
+					
+		 catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("POR FAVOR! Ingrese un número");
 			a = 0;
-		}
-		   }
-		
-		Scanner entradaEscaner1 = new Scanner (System.in);
-		
-		try {
-			if (opcion==1){
-				System.out.println("Ingrese el nombre de la Ciudad1:");
-					ciudad1 = entradaEscaner1.next();
-				System.out.println("Ingrese el nombre de la Ciudad2:");
-					ciudad2 = entradaEscaner1.next();
-			}
-		} catch (Exception e) {
-			System.out.println("Error de escritura en la ciudad");
-			a = 0;
-		} 
-		
-		
-		FloydWarshall floyd = new FloydWarshall(vertices, edges);
-		
-		floyd.execute();
-		
-		
-		Vertex source = vertexObjects.get(ciudad1);
-		Vertex destination = vertexObjects.get(ciudad2);
-		
-		Vector<Vertex> path = floyd.path(source, destination);
-		try {
-			System.out.println("Source: "+source.getNombre()+"; Destination: "+destination.getNombre());
-			System.out.println("Path lenght: "+floyd.pathLenght(source, destination)+"km");
-			System.out.println("Path to follow:");
-			for(Vertex vertex : path){
-				System.out.print(vertex.getNombre()+"-->");
-			}
-			System.out.println("*");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Ciudades no encontradas, verifique ingresos");
-			a = 0;
+		 	}
 		}
 		
+
 	}
+		
+		
+}
+
